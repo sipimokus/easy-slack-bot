@@ -8,13 +8,12 @@ Node.js based, modular Slack bot framework.
 [![Dependency Status][deps-image]][deps-url]
 [![devDependency Status][devs-image]][devs-url]
 
-
 ## INSTALLATION
 ```
 $ npm install easy-slack-bot --save
 ```
 
-## USAGE
+## EXAMPLE
 See sample files in ["example"](https://github.com/sipimokus/easy-slack-bot/tree/master/example) direction.
 
 ## DOCUMENTATION
