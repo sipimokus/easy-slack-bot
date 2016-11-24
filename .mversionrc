@@ -4,7 +4,7 @@
   "scripts": {
     "preupdate":  "echo 'Running deploy process and bumping version'",
     "precommit":  "npm run gulp",
-    "postcommit": "git push --set-upstream origin master && git push --tags && npm publish",
+    "postcommit": "git push origin master && git push --tags && npm publish",
     "postupdate": "echo 'Updated to version %s in manifest files'"
   }
 }
