@@ -29,7 +29,7 @@ namespace EasySlackBot
         {
             if ( message.text )
             {
-                message.natural = this.Helpers.naturalizeText( message.text );
+                message.natural = this.Helpers.naturalizeText(message.text);
             }
             else
             {

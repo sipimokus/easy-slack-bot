@@ -84,7 +84,7 @@ namespace EasySlackBot
          * @param message
          * @param callBack
          */
-        public onMessage( message: ISlackbotsMessage, callBack: any ): void
+        public onMessage( message: ISlackbotsMessage, callBack: IitemsOnMessageCallBack ): void
         {
             this.debug("__onMessage");
 
@@ -101,6 +101,7 @@ namespace EasySlackBot
 
                     if ( typeof this.items[ index ].message !== "undefined" )
                     {
+                        // TODO
                         if ( this.items[ index ].message(message, runMessage) )
                         {
                             this.debug("__onMessage_match: " + index);

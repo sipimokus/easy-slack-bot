@@ -16,7 +16,7 @@ namespace EasySlackBot
         private Slack: EasySlackBot.Slack;
         private bot: ISlackbots;
 
-        constructor( botItems: any, callBack: any )
+        constructor( botItems: any, callBack?: any )
         {
             this.debug("__constructor");
 
@@ -25,7 +25,10 @@ namespace EasySlackBot
             this.Message = new EasySlackBot.Message();
             this.Slack = new EasySlackBot.Slack();
 
-            this.start( botItems, callBack );
+
+            this.start(botItems, !callBack ? () => {
+                // Fake callback
+            } : callBack);
         }
 
         private start( botItems: any, callBack: ImainOnSlackMessageCallBack ) : void

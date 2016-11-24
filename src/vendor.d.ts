@@ -70,3 +70,8 @@ declare interface ImainOnSlackMessageCallBack
 {
     ( bot: ISlackbots ): any;
 }
+
+declare interface IitemsOnMessageCallBack
+{
+    ( text: string, params: any, err: any ): any;
+}
