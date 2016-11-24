@@ -8,13 +8,58 @@ Node.js based, modular Slack bot framework.
 [![Dependency Status][deps-image]][deps-url]
 [![devDependency Status][devs-image]][devs-url]
 
+
 ## INSTALLATION
 ```
 $ npm install easy-slack-bot --save
 ```
 
+
 ## EXAMPLE
 See sample files in ["example"](https://github.com/sipimokus/easy-slack-bot/tree/master/example) direction.
+
+
+## USAGE
+Simple index.js:
+```
+process.env.SLACK_TOKEN = "slack-bot-token";
+
+var SlackBot = require("easy-slack-bot"),
+    BotItems = __dirname + "/items";
+
+new SlackBot(BotItems);
+```
+
+Simple items/hello.js item:
+```
+module.exports = function( bot )
+{
+    // https://api.slack.com/methods/chat.postMessage
+    var params = {
+        icon_emoji: ':robot_face:'
+    };
+
+    return 
+    {
+        // Get message
+        // https://rawgit.com/sipimokus/easy-slack-bot/master/docs/interfaces/islackbotsmessage.html
+        message: function( message, callBack ) 
+        {
+            // Detected word in message
+            if ( message.natural.indexOf("hello") > -1 ) 
+            {
+                // Answer message
+                callBack("Hello world!", params);
+
+                return true;
+            }
+
+            return false;
+        }
+    };
+};
+```
+
 
 ## DOCUMENTATION
 [Source documentation find here.](https://rawgit.com/sipimokus/easy-slack-bot/master/docs/index.html)
