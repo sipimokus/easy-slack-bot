@@ -43,9 +43,10 @@ module.exports = function( bot )
     {
         // Get message
         // https://rawgit.com/sipimokus/easy-slack-bot/master/docs/interfaces/islackbotsmessage.html
+        // https://rawgit.com/sipimokus/easy-slack-bot/master/docs/interfaces/iitemsonmessagecallback.html
         message: function( message, callBack ) 
         {
-            // Detected word in message
+            // Detecting word in message
             if ( message.natural.indexOf("hello") > -1 ) 
             {
                 // Answer message
