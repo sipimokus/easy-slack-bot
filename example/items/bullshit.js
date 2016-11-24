@@ -9,7 +9,7 @@ module.exports = function( bot )
     return {
         message: function( message, callBack )
         {
-            if ( message.naturals.indexOf("bullshit") > -1 )
+            if ( message.natural.indexOf("bullshit") > -1 )
             {
                 this.answer( callBack );
 
