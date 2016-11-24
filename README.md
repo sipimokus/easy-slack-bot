@@ -1,3 +1,3 @@
 # Easy Slack Bot
 
-Module based slack bot.
+Module based slack bot framework.
