@@ -64,8 +64,54 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="easy-slack-bot">Easy Slack Bot</h1>
-				<p>Module based slack bot framework.</p>
+				<h1 id="easy-slack-bot">easy-slack-bot</h1>
+				<p>Node.js based, modular Slack bot framework.</p>
+				<p><a href="https://npmjs.org/package/easy-slack-bot"><img src="https://img.shields.io/npm/v/easy-slack-bot.svg" alt="NPM Version"></a>
+					<a href="https://travis-ci.org/sipimokus/easy-slack-bot"><img src="https://img.shields.io/travis/sipimokus/easy-slack-bot/master.svg?label=linux" alt="Linux Build"></a>
+					<a href="https://ci.appveyor.com/project/sipimokus/easy-slack-bot"><img src="https://img.shields.io/appveyor/ci/sipimokus/easy-slack-bot/master.svg?label=windows" alt="Windows Build"></a>
+					<a href="https://david-dm.org/sipimokus/easy-slack-bot"><img src="https://img.shields.io/david/sipimokus/easy-slack-bot.svg?label=deps" alt="Dependency Status"></a>
+				<a href="https://david-dm.org/sipimokus/easy-slack-bot?type=dev"><img src="https://img.shields.io/david/dev/sipimokus/easy-slack-bot.svg?label=devDeps" alt="devDependency Status"></a></p>
+				<h2 id="installation">INSTALLATION</h2>
+				<pre><code>$ npm <span class="hljs-keyword">install </span>easy-slack-<span class="hljs-keyword">bot </span>--save
+</code></pre><h2 id="example">EXAMPLE</h2>
+				<p>See sample files in <a href="https://github.com/sipimokus/easy-slack-bot/tree/master/example">&quot;example&quot;</a> direction.</p>
+				<h2 id="usage">USAGE</h2>
+				<p>Simple index.js:</p>
+				<pre><code>process.env.SLACK_TOKEN = <span class="hljs-string">"slack-bot-token"</span>;
+
+<span class="hljs-keyword">var</span> SlackBot = require(<span class="hljs-string">"easy-slack-bot"</span>),
+    BotItems = __dirname + <span class="hljs-string">"/items"</span>;
+
+<span class="hljs-keyword">new</span> <span class="hljs-type">SlackBot</span>(BotItems);
+</code></pre><p>Simple items/hello.js item:</p>
+				<pre><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> bot </span>)
+</span>{
+    <span class="hljs-comment">// https://api.slack.com/methods/chat.postMessage</span>
+    <span class="hljs-keyword">var</span> params = {
+        <span class="hljs-attr">icon_emoji</span>: <span class="hljs-string">':robot_face:'</span>
+    };
+
+    <span class="hljs-keyword">return</span> 
+    {
+        <span class="hljs-comment">// Get message</span>
+        <span class="hljs-comment">// https://rawgit.com/sipimokus/easy-slack-bot/master/docs/interfaces/islackbotsmessage.html</span>
+        message: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> message, callBack </span>) 
+        </span>{
+            <span class="hljs-comment">// Detected word in message</span>
+            <span class="hljs-keyword">if</span> ( message.natural.indexOf(<span class="hljs-string">"hello"</span>) &gt; <span class="hljs-number">-1</span> ) 
+            {
+                <span class="hljs-comment">// Answer message</span>
+                callBack(<span class="hljs-string">"Hello world!"</span>, params);
+
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+            }
+
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+    };
+};
+</code></pre><h2 id="documentation">DOCUMENTATION</h2>
+				<p><a href="https://rawgit.com/sipimokus/easy-slack-bot/master/docs/index.html">Source documentation find here.</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -230,6 +276,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-is-not-exported">
 						<a href="interfaces/islackbotsmessage.html" class="tsd-kind-icon">ISlackbots<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/iitemsonmessagecallback.html" class="tsd-kind-icon">Iitems<wbr>OnMessage<wbr>Call<wbr>Back</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-not-exported">
 						<a href="interfaces/imainonslackmessagecallback.html" class="tsd-kind-icon">Imain<wbr>OnSlack<wbr>Message<wbr>Call<wbr>Back</a>
