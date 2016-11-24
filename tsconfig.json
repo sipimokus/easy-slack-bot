@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "removeComments": false,
+    "noImplicitAny": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "outDir": "lib",
+    "outFile": "lib/index.js",
+    "typeRoots": [
+      "./typings"
+    ],
+    "types": [
+      "globals/debug",
+      "globals/dotenv",
+      "globals/latinize",
+      "globals/node"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "src/typings/",
+    "typings"
+  ],
+  "filesGlob": [
+    "src/**/*.ts"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}

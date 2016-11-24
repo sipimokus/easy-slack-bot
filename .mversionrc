@@ -1,0 +1,10 @@
+{
+  "commitMessage": "Update version to %s",
+  "tagName": "v%s",
+  "scripts": {
+    "preupdate":  "echo 'Running deploy process and bumping version'",
+    "precommit":  "npm run gulp",
+    "postcommit-off": "git push && git push --tags && npm publish",
+    "postupdate": "echo 'Updated to version %s in manifest files'"
+  }
+}

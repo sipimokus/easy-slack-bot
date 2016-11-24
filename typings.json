@@ -1,0 +1,9 @@
+{
+  "globalDependencies": {
+    "debug": "registry:dt/debug#0.0.0+20160317120654",
+    "dotenv": "registry:dt/dotenv#2.0.0+20160327131627",
+    "latinize": "registry:dt/latinize#0.2.0+20160417130619",
+    "mocha": "registry:dt/mocha#2.2.5+20161028141524",
+    "node": "registry:env/node#6.0.0+20161105011511"
+  }
+}
