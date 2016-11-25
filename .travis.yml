@@ -23,5 +23,9 @@ install:
 script:
   - npm test
 
+env:
+  global:
+    - CODECOV_TOKEN=:b9ff52b3-2ee2-47e9-b6b2-f79b9fe69a5c
+
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
