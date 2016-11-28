@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ImainOnSlackMessageCallBack | easy-slack-bot</title>
+	<title>ImessageOnSlackMessageCallBack | easy-slack-bot</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="imainonslackmessagecallback.html">ImainOnSlackMessageCallBack</a>
+					<a href="../modules/easyslackbot.html">EasySlackBot</a>
+				</li>
+				<li>
+					<a href="easyslackbot.imessageonslackmessagecallback.html">ImessageOnSlackMessageCallBack</a>
 				</li>
 			</ul>
-			<h1>Interface ImainOnSlackMessageCallBack</h1>
+			<h1>Interface ImessageOnSlackMessageCallBack</h1>
 		</div>
 	</div>
 </header>
@@ -70,26 +73,26 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ImainOnSlackMessageCallBack</span>
+						<span class="target">ImessageOnSlackMessageCallBack</span>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel">
 				<h3 class="tsd-before-signature">Callable</h3>
-				<ul class="tsd-signatures tsd-kind-interface tsd-is-not-exported">
-					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>bot<span class="tsd-signature-symbol">: </span><a href="islackbots.html" class="tsd-signature-type">ISlackbots</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><a href="islackbotsmessage.html" class="tsd-signature-type">ISlackbotsMessage</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sipimokus/easy-slack-bot/blob/7b6ca87/src/vendor.d.ts#L70">src/vendor.d.ts:70</a></li>
+								<li>Defined in src/source.d.ts:34</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>bot: <a href="islackbots.html" class="tsd-signature-type">ISlackbots</a></h5>
+								<h5>message: <a href="islackbotsmessage.html" class="tsd-signature-type">ISlackbotsMessage</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -103,14 +106,47 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class="current tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/easyslackbot.html">Easy<wbr>Slack<wbr>Bot</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/easyslackbot.filters.html" class="tsd-kind-icon">Filters</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/easyslackbot.helpers.html" class="tsd-kind-icon">Helpers</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/easyslackbot.items.html" class="tsd-kind-icon">Items</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/easyslackbot.main.html" class="tsd-kind-icon">Main</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/easyslackbot.message.html" class="tsd-kind-icon">Message</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/easyslackbot.slack.html" class="tsd-kind-icon">Slack</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="easyslackbot.ieasyslackbotitemobject.html" class="tsd-kind-icon">IEasy<wbr>Slack<wbr>Bot<wbr>Item<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="easyslackbot.imainonslackmessagecallback.html" class="tsd-kind-icon">IMain<wbr>OnSlack<wbr>Message<wbr>Call<wbr>Back</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="easyslackbot.imainoptions.html" class="tsd-kind-icon">IMain<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="easyslackbot.iitemsonmessagecallback.html" class="tsd-kind-icon">Iitems<wbr>OnMessage<wbr>Call<wbr>Back</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-is-not-exported">
-						<a href="imainonslackmessagecallback.html" class="tsd-kind-icon">Imain<wbr>OnSlack<wbr>Message<wbr>Call<wbr>Back</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="easyslackbot.imessageonslackmessagecallback.html" class="tsd-kind-icon">Imessage<wbr>OnSlack<wbr>Message<wbr>Call<wbr>Back</a>
 					</li>
 				</ul>
 				<ul class="after-current">
