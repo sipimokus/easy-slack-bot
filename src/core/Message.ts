@@ -1,6 +1,4 @@
-/// <reference path="../../typings/index.d.ts" />
-/// <reference path="./../vendor.d.ts" />
-/// <reference path="./Helpers.ts" />
+/// <reference path="./../source.d.ts" />
 
 /**
  *
@@ -25,7 +23,7 @@ namespace EasySlackBot
             this.Helpers = new EasySlackBot.Helpers();
         }
 
-        public onMessage( message: ISlackbotsMessage, callBack: ImessageOnSlackMessageCallBack ): void
+        public onMessage( message: ISlackbotsMessage, callBack: EasySlackBot.ImessageOnSlackMessageCallBack ): void
         {
             if ( message.text )
             {

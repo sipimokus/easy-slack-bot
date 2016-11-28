@@ -1,12 +1,11 @@
-declare namespace NodeJS
-{
-    interface Env
-    {
-        SLACK_TOKEN: string;
-    }
-}
+/// <reference path="../typings/index.d.ts" />
 
-declare interface ISlackbots extends NodeJS.EventEmitter
+/**
+ * "slackbots" package interface
+ *
+ * https://www.npmjs.com/package/slackbots
+ */
+interface ISlackbots extends NodeJS.EventEmitter
 {
     token: string;
     name: string;
@@ -36,7 +35,7 @@ declare interface ISlackbots extends NodeJS.EventEmitter
  *
  * https://api.slack.com/events/message
  */
-declare interface ISlackbotsMessage
+interface ISlackbotsMessage
 {
     type: string;
     subtype?: string;
@@ -53,25 +52,4 @@ declare interface ISlackbotsMessage
     natural?: string[];
     pinned_to?: string[];
     reactions?: any;
-}
-
-declare interface IEasySlackBotItemObject
-{
-    new ( bot: ISlackbots ): any;
-    message( message: ISlackbotsMessage, callBack: any ): void;
-}
-
-declare interface ImessageOnSlackMessageCallBack
-{
-    ( message: ISlackbotsMessage ): any;
-}
-
-declare interface ImainOnSlackMessageCallBack
-{
-    ( bot: ISlackbots ): any;
-}
-
-declare interface IitemsOnMessageCallBack
-{
-    ( text: string, params: any, err: any ): any;
 }

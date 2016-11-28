@@ -1,5 +1,4 @@
-/// <reference path="../../typings/index.d.ts" />
-/// <reference path="./../vendor.d.ts" />
+/// <reference path="./../source.d.ts" />
 
 /**
  * easy-slack-bot namespace.
@@ -19,11 +18,21 @@ namespace EasySlackBot
         /**
          * Slack manager constructor.
          */
-        public constructor()
+        public constructor( botOptions: IMainOptions )
         {
             this.debug("__constructor");
 
-            this.token = process.env.SLACK_TOKEN;
+            if ( !botOptions.hasOwnProperty("Slack") )
+            {
+                throw new Error("Slack options undefined!");
+            }
+
+            if ( !botOptions.hasOwnProperty("Slack") )
+            {
+                throw new Error("Slack options SLACK_TOKEN undefined!");
+            }
+
+            this.token = botOptions.Slack.SLACK_TOKEN;
         }
 
         /**
@@ -31,7 +40,7 @@ namespace EasySlackBot
          *
          * @param callBack
          */
-        public start( callBack: ImainOnSlackMessageCallBack ): void
+        public start( callBack: EasySlackBot.IMainOnSlackMessageCallBack ): void
         {
             // Create a bot
             this.bot = new this.client({

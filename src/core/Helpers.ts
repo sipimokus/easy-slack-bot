@@ -1,5 +1,4 @@
-/// <reference path="../../typings/index.d.ts" />
-/// <reference path="./../vendor.d.ts" />
+/// <reference path="./../source.d.ts" />
 
 /**
  * easy-slack-bot namespace.

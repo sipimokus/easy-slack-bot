@@ -10,10 +10,14 @@
 require("dotenv").config();
 
 var SlackBot = require("easy-slack-bot"),
-    BotItems = __dirname + "/items";
+    BotItems = __dirname + "/items",
+    BotOptions = {
+        Slack: {
+            SLACK_TOKEN: process.env.SLACK_TOKEN
+        }
+    };
 
-new SlackBot(BotItems, function( bot )
-{
+new SlackBot(BotItems, BotOptions, function (bot) {
     // Example "Hello World"
     //
     // Define channel, where bot exist.
@@ -24,7 +28,7 @@ new SlackBot(BotItems, function( bot )
             icon_emoji: ":robot_face:"
         };
 
-    bot.postMessageToChannel(channel, message, params, function(){
+    bot.postMessageToChannel(channel, message, params, function () {
         console.log("Hello message sent");
     });
 });

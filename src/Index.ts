@@ -1,9 +1,4 @@
-/// <reference path="../typings/index.d.ts" />
-/// <reference path="./vendor.d.ts" />
-/// <reference path="./core/Helpers.ts" />
-/// <reference path="./core/Items.ts" />
-/// <reference path="./core/Message.ts" />
-/// <reference path="./core/Slack.ts" />
+/// <reference path="./source.d.ts" />
 
 namespace EasySlackBot
 {
@@ -16,23 +11,30 @@ namespace EasySlackBot
         private Slack: EasySlackBot.Slack;
         private bot: ISlackbots;
 
-        constructor( botItems: any, callBack?: any )
+        constructor( botItems: any, botOptions: IMainOptions, callBack?: any )
         {
             this.debug("__constructor");
 
             this.Helpers = new EasySlackBot.Helpers();
             this.Items = new EasySlackBot.Items();
             this.Message = new EasySlackBot.Message();
-            this.Slack = new EasySlackBot.Slack();
+            this.Slack = new EasySlackBot.Slack(botOptions);
 
 
-            this.start(botItems, !callBack ? () => {
+            this.start(botItems, botOptions, !callBack ? () =>
+            {
                 // Fake callback
             } : callBack);
         }
 
-        private start( botItems: any, callBack: ImainOnSlackMessageCallBack ) : void
+        private start( botItems: any, options: EasySlackBot.IMainOptions | EasySlackBot.IMainOnSlackMessageCallBack,
+                       callBack?: EasySlackBot.IMainOnSlackMessageCallBack ): void
         {
+            if ( typeof options === "function" )
+            {
+                callBack = <EasySlackBot.IMainOnSlackMessageCallBack>options;
+            }
+
             this.Items.setBotItems(botItems);
             this.Slack.start(( bot: ISlackbots ) =>
             {
@@ -48,7 +50,7 @@ namespace EasySlackBot
          *
          * @param callBack
          */
-        private onSlackMessage( callBack: ImainOnSlackMessageCallBack ): void
+        private onSlackMessage( callBack: EasySlackBot.IMainOnSlackMessageCallBack ): void
         {
             this.debug("Connected");
 

@@ -1,5 +1,4 @@
-/// <reference path="../../typings/index.d.ts" />
-/// <reference path="./../vendor.d.ts" />
+/// <reference path="./../source.d.ts" />
 
 let fs: any = require("fs");
 
@@ -29,10 +28,11 @@ namespace EasySlackBot
          * Set botItems object
          *
          * @param botItems
+         * @returns {boolean}
          */
-        public setBotItems( botItems: string | any ): void
+        public setBotItems( botItems: string | any ): boolean
         {
-            this.loadItems(botItems);
+            return this.loadItems(botItems);
         }
 
         /**
@@ -60,18 +60,18 @@ namespace EasySlackBot
          *
          * @returns {any}
          */
-        public getList(): IEasySlackBotItemObject[]
+        public getList(): EasySlackBot.IEasySlackBotItemObject[]
         {
             return this.items;
         }
 
         /**
-         * Get item ibject by name.
+         * Get item object by name.
          *
          * @param itemName
          * @returns {any}
          */
-        public getItem( itemName: string ): IEasySlackBotItemObject
+        public getItem( itemName: string ): EasySlackBot.IEasySlackBotItemObject
         {
             return this.items[ itemName ];
         }
@@ -84,7 +84,7 @@ namespace EasySlackBot
          * @param message
          * @param callBack
          */
-        public onMessage( message: ISlackbotsMessage, callBack: IitemsOnMessageCallBack ): void
+        public onMessage( message: ISlackbotsMessage, callBack: EasySlackBot.IitemsOnMessageCallBack ): void
         {
             this.debug("__onMessage");
 
@@ -150,7 +150,7 @@ namespace EasySlackBot
             {
                 if ( itemsList.hasOwnProperty(index) )
                 {
-                    let itemSource: IEasySlackBotItemObject = itemsList[ index ];
+                    let itemSource: EasySlackBot.IEasySlackBotItemObject = itemsList[ index ];
 
                     if ( typeof itemsList[ index ] === "function" )
                     {
@@ -181,7 +181,7 @@ namespace EasySlackBot
             {
                 if ( itemsFiles.hasOwnProperty(index) )
                 {
-                    let itemSource: IEasySlackBotItemObject = require(itemsPath + "/" + itemsFiles[ index ]);
+                    let itemSource: EasySlackBot.IEasySlackBotItemObject = require(itemsPath + "/" + itemsFiles[ index ]);
 
                     if ( typeof itemSource === "function" )
                     {
