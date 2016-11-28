@@ -78,12 +78,15 @@
 				<p>See sample files in <a href="https://github.com/sipimokus/easy-slack-bot/tree/master/example">&quot;example&quot;</a> direction.</p>
 				<h2 id="usage">USAGE</h2>
 				<p>Simple index.js:</p>
-				<pre><code class="lang-javascript">process.env.SLACK_TOKEN = <span class="hljs-string">"slack-bot-token"</span>;
+				<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> SlackBot = <span class="hljs-built_in">require</span>(<span class="hljs-string">"easy-slack-bot"</span>),
+    BotItems = __dirname + <span class="hljs-string">"/items"</span>,
+    BotOptions = {
+        <span class="hljs-attr">Slack</span>: {
+            <span class="hljs-attr">SLACK_TOKEN</span>: <span class="hljs-string">"slack-bot-token"</span>
+        }
+    };
 
-<span class="hljs-keyword">var</span> SlackBot = <span class="hljs-built_in">require</span>(<span class="hljs-string">"easy-slack-bot"</span>),
-    BotItems = __dirname + <span class="hljs-string">"/items"</span>;
-
-<span class="hljs-keyword">new</span> SlackBot(BotItems);
+<span class="hljs-keyword">new</span> SlackBot(BotItems, BotOptions);
 </code></pre>
 				<p>Simple items/hello.js item:</p>
 				<pre><code class="lang-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> bot </span>)
