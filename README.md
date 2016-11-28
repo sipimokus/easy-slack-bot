@@ -7,6 +7,7 @@ Node.js based, modular Slack bot framework.
 [![Windows Build][appveyor-image]][appveyor-url]
 [![Dependency Status][deps-image]][deps-url]
 [![devDependency Status][devs-image]][devs-url]
+[![Codecov coverage][codecov-image]][codecov-url]
 
 
 ## INSTALLATION
@@ -16,7 +17,7 @@ $ npm install easy-slack-bot --save
 
 
 ## EXAMPLE
-See sample files in ["example"](https://github.com/sipimokus/easy-slack-bot/tree/master/example) direction.
+See sample files in ["example"](https://github.com/sipimokus/easy-slack-bot/tree/master/example) directory.
 
 
 ## USAGE
@@ -78,3 +79,5 @@ module.exports = function( bot )
 [deps-url]: https://david-dm.org/sipimokus/easy-slack-bot
 [devs-image]: https://img.shields.io/david/dev/sipimokus/easy-slack-bot.svg?label=devDeps
 [devs-url]: https://david-dm.org/sipimokus/easy-slack-bot?type=dev
+[codecov-image]: https://img.shields.io/codecov/c/github/sipimokus/easy-slack-bot/master.svg
+[codecov-url]: https://codecov.io/gh/sipimokus/easy-slack-bot/branch/master

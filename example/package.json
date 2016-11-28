@@ -10,6 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "slack-bot": "1.*.*"
+    "slack-bot": "0.*.*"
   }
 }
